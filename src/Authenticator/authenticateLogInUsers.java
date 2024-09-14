@@ -48,9 +48,8 @@ public class authenticateLogInUsers {
             String sql = "UPDATE user_rated_information SET rate = ?, description = ? WHERE rate IS NULL AND description IS NULL";
             PreparedStatement preparedStmt = conn.prepareStatement(sql);
 
-            // Set the parameters
-            preparedStmt.setInt(1, rate); // Replace 'yourRateValue' with the actual value you want to set
-            preparedStmt.setString(2, description); // Replace 'yourDescriptionValue' with the actual value you want to set
+            preparedStmt.setInt(1, rate);
+            preparedStmt.setString(2, description);
 
             preparedStmt.executeUpdate();
             conn.close();
